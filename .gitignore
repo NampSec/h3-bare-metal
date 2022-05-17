@@ -1,2 +1,7 @@
 *.o
 os.*
+driver/display
+driver/interrupt
+driver/mmu
+driver/spriteplayer
+driver/usb
