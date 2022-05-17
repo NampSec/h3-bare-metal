@@ -4,14 +4,14 @@ cpsid if
 MRC p15,0,r0,c1,c0,2    // Read CP Access register
 ORR r0,r0,#0x00f00000   // Enable full access to NEON/VFP (Coprocessors 10 and 11)
 MCR p15,0,r0,c1,c0,2    // Write CP Access register
-ISB
+ISB                     //sync the instruction above
 MOV r0,#0x40000000      // Switch on the VFP and NEON hardware
 VMSR FPEXC,r0            // Set EN bit in FPEXC
 
 mov sp, #0x4000
 b startup
 
-.globl _ivt
+.globl _ivt                 //interrupt vector table
 _ivt:
 ldr pc, _reset_h
 ldr pc, _undefined_instruction_vector_h
@@ -27,5 +27,5 @@ _software_interrupt_vector_h:       .word   _reset
 _prefetch_abort_vector_h:           .word   _reset
 _data_abort_vector_h:               .word   _reset
 _unused_handler_h:                  .word   _reset
-_interrupt_vector_h:                .word   interrupt
+_interrupt_vector_h:                .word   _reset
 _fast_interrupt_vector_h:           .word   _reset
