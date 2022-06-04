@@ -1,7 +1,5 @@
-*.o
-os.*
-driver/display
-driver/interrupt
-driver/mmu
-driver/spriteplayer
-driver/usb
+.git
+.idea
+.vscode
+experiment2
+experiment3
