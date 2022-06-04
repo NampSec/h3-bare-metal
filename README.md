@@ -9,9 +9,9 @@ with the exception of DRAM which is initialized by u-boot SPL.
 
 下面是进度：
 
+- [x] GPIO测试
 - [ ] ARM汇编测试
 - [ ] ARM内联汇编测试
-- [ ] GPIO测试
 - [ ] ARM时钟测试
 - [ ] UART测试
 - [ ] GIC测试
