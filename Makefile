@@ -22,4 +22,4 @@ cleanbin:
 	rm -f os.*
 
 install: os.bin
-	sunxi-fel spl ../u-boot/spl/sunxi-spl.bin write 0x4e000000 os.bin exe 0x4e000000
+	sunxi-fel spl ./u-boot/spl/sunxi-spl.bin write 0x4e000000 os.bin exe 0x4e000000

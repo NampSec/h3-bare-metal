@@ -5,8 +5,6 @@
 
 uint32_t tick_counter;
 
-//void game_tick(uint32_t tick_counter);
-//void game_start();
 
 void startup() {
   init_bss();
@@ -42,9 +40,3 @@ void startup() {
   // Go back to sleep
   while(1) asm("wfi");
 }
-
-//void game_tick_next() {
-//  buffer_swap();
-//  game_tick(tick_counter);
-//  tick_counter++;
-//}
